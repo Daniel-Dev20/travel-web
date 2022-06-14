@@ -1,0 +1,56 @@
+<app-loading *ngIf="loading"></app-loading>
+<div class="content-busqueda">
+    <div class="content-input">
+        <h4>{{'lugares.texto' | translate}}</h4>
+        <nz-input-group nzSearch nzSize="large" class="content-input-busqueda">
+            <img class="marcador" src="../../assets/marcador.png">
+            <input [(ngModel)]="place" class="input-busqueda" nzSize="small" type="text" nz-input
+                placeholder="Encuentralo aquí" />
+            <button (click)="buscar()" class="btn-buscar" nz-button nzType="primary" nzSize="large"
+                nzSearch>{{'buscar.texto'| translate}}</button>
+        </nz-input-group>
+    </div>
+    <div>
+        <img class="img-travel" src="../../assets/travel.png">
+    </div>
+</div>
+<div class="clean"></div>
+<div *ngIf="spinner" class="lds-ring">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<div *ngIf="spinner == false" class="content-gallery">
+    <div class="gallery-flex">
+        <div *ngFor="let dato of data">
+            <div>
+                <img class="images" src="../../assets/paies.png">
+            </div>
+            <div>
+                <p class="parrafo-paquete">
+                    {{dato.address.municipality}}
+                </p>
+            </div>
+            <div>
+                <p class="parrafo-country"><img class="marcador"
+                        src="../../assets/marcador.png">{{dato.address.country}}</p>
+            </div>
+            <hr>
+            <div>
+                <button class="btn-paquete" nz-button nzType="default"
+                    [routerLink]="['/detalle', dato.id ]">{{'detalle.texto'|translate}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="spinner == false" class="info-paquetes">
+    <div class="center-info">
+        <div>
+            <p class="parrafo-especial">{{'especial.texto'|translate}}</p>
+        </div>
+        <div>
+            <button class="btn-todos" nzSize="large" nz-button nzType="primary">{{'todos.texto' | translate}}</button>
+        </div>
+    </div>
+</div>

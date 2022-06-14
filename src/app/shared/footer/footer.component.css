@@ -1,0 +1,35 @@
+.content-footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 300px;
+    background: red;
+}
+
+.center-footer{
+    width: 90%;
+    margin: 20px;
+    display: flex;
+    background: yellow;
+    justify-content: center;
+}
+
+.center-footer > div{
+    width: 30%;
+    display: flex;
+    background: red;
+    margin: 20px;
+  
+}
+
+.img-footer{
+
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0px auto;
+}
+
+.flex-footer{
+    display: flex;
+}

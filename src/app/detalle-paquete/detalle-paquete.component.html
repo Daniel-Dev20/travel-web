@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+<div *ngIf="spinner" class="lds-ring">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<div *ngIf="spinner == false" class="content-gallery">
+    <div class="gallery-flex">
+        <div *ngFor="let dato of data">
+            <div>
+                <img class="images" src="../../assets/rio.png">
+            </div>
+            <div>
+                <p class="parrafo-paquete">
+                    {{dato.address.country}}
+                </p>
+            </div>
+            <div>
+                <p class="parrafo-country"><img class="marcador"
+                        src="../../assets/marcador.png">{{dato.address.localName}}</p>
+                <p class="precio">${{suma}}</p>
+            </div>
+            <hr>
+            <div>
+                <p>{{dato.address.freeformAddress}}</p>
+                <p>Descripción: Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, officia dolore. Ipsa
+                    vero et dignissimos nam nulla ut doloremque ad reprehenderit, ullam officia cum aut. Illo officiis
+                    minima deleniti quibusdam?</p>
+            </div>
+            <div class="content-compra">
+                <div>
+                    <button (click)="add()" nz-button nzType="primary">+</button>
+                </div>
+                <p>{{contador}}</p>
+                <div>
+                    <button (click)="dis()" nz-button nzType="primary">-</button>
+                </div>
+                <button (click)="dis()" nz-button nzType="primary">{{'comprar.texto'| translate}}</button>
+            </div>
+        </div>
+    </div>
+</div>

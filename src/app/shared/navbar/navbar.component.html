@@ -1,0 +1,33 @@
+
+<div  class="content-navbar">
+    
+  
+    <div >
+        <h1 class="titulo">SENVALI</h1>
+    </div>
+    
+    
+    <div>
+        
+        <ul class="menu">
+            <li>{{'nosotros.texto' | translate}}</li>
+            <li>{{'paquetes.texto' | translate}}</li>
+            <li [routerLink]="['/home']">{{'inicio.texto' | translate}}</li>
+            <li>
+                <select  class="selector" (change)="cambiarLanguaje()">
+                    <option value="es">Español</option>
+                    <option value="en">Ingles</option>
+                </select>
+            </li>
+        </ul>
+        
+        
+    </div>
+   
+   
+  
+</div>
+
+<hr>
+
+
